@@ -52,3 +52,6 @@ return
 ::shibe::
 shibe()
 return
+::shout::
+shout()
+return

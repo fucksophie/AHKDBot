@@ -22,6 +22,7 @@ chuck - Chuck Norris joke.
 xkcd - Get the newest xkcd comic.
 floof - Get an fox
 shibe - :x: Currently Broken :x:
+shout - Makes your text be uppercased.
 ---------------------------------------------
 )
 Send, ^v
@@ -279,3 +280,13 @@ send, ^v
 send {enter}
 return
 }
+shout()
+{
+inputbox,hello,,SHOUT TO ANYBODY YOU WANAT!
+stringupper,despacito,hello
+	WinActivate,ahk_exe discord.exe
+clipboard = %despacito%
+send, ^v
+send {enter}
+return
+}	
