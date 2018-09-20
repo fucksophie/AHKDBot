@@ -182,12 +182,15 @@ version()
 
 clipboard =  
 (
-Version 2.0 (Release 1)
+Version 3.0 (Release 2)
 ==================
-			Info about 2.0
+			Info about 3.0
 ==================
-    We are using clipboard now.
-	That makes it about 10 times more faster.
+3.0 has alot more commands. Also ahkDBot has a github rep now. https://github.com/RazorApple/AHKDBot#usage
+It has info about setting it up and stuff.
+I have plans on making more stuff like commands with parametrs and stuff. Dont get hyped bcs i still dont know 
+if i can make that come alive.
+Untill then we are going to stick to the clipboard and the function loader thing.
 )
 
 Send, ^v
