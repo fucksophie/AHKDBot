@@ -55,3 +55,6 @@ return
 ::shout::
 shout()
 return
+::chirp::
+chirp()
+return

@@ -21,8 +21,9 @@ welcome - Welcome  an newcommer!
 chuck - Chuck Norris joke.
 xkcd - Get the newest xkcd comic.
 floof - Get an fox
-shibe - :x: Currently Broken :x:
+shibe - :heavy_check_mark:  Fixed by Maestr0 :heavy_check_mark: - Get an random shibe pic.
 shout - Makes your text be uppercased.
+chirp - Get an random bird pic.
 ---------------------------------------------
 )
 Send, ^v
@@ -264,10 +265,23 @@ whr.Open("GET", "http://shibe.online/api/shibes", true)
 whr.Send()
 ; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
-main := StrReplace(whr.ResponseText,"[""")
-main1 := StrReplace(main,"]""")
+Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
 WinActivate,ahk_exe discord.exe
-clipboard = %main1%
+clipboard = %Output%
+send, ^v
+send {enter}
+return
+}
+chirp()
+{
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "http://shibe.online/api/birds", true)
+whr.Send()
+; Using 'true' above and the call below allows the script to remain responsive.
+whr.WaitForResponse()
+Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
+WinActivate,ahk_exe discord.exe
+clipboard = %Output%
 send, ^v
 send {enter}
 return
