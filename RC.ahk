@@ -112,12 +112,14 @@ send {enter}
 ;
 meow()
 {
-	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-whr.Open("GET", "https://api.thecatapi.com/v1/images/search?format=src&api_key=66d72cdd-587d-4821-891c-46b76fbd9f55", false)
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "https://shibe.online/api/cats", true)
 whr.Send()
-tinyURL := whr.Option(1)
-WinActivate,ahk_exe Discord.exe
-clipboard = %tinyURL%
+; Using 'true' above and the call below allows the script to remain responsive.
+whr.WaitForResponse()
+Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
+WinActivate,ahk_exe discord.exe
+clipboard = %Output%
 send, ^v
 send {enter}
 
@@ -128,12 +130,12 @@ send {enter}
 woof()
 {
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-whr.Open("GET", "https://api.thedogapi.com/v1/images/search?format=src&api_key=21f828fb-421d-4c15-87c9-3741e25117a8", false)
+whr.Open("GET", "https://dog.ceo/api/breeds/image/random", false)
 whr.Send()
-tinyURL := whr.Option(1)
+obj :=  Jxon_Load(whr.ResponseText)
 setkeydelay,80
 WinActivate,ahk_exe Discord.exe
-clipboard = %tinyURL%
+clipboard = % obj.message	
 send, ^v
 send {enter}
 setkeydelay, 10
