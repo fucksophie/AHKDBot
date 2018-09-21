@@ -64,3 +64,9 @@ return
 ::randAvatar::
 randAvatar()
 return
+::randLine::
+randLine()
+return
+::randpic::
+randPic()
+return
