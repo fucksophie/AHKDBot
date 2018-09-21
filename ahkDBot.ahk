@@ -58,3 +58,9 @@ return
 ::chirp::
 chirp()
 return
+::answer::
+answer()
+return
+::randAvatar::
+randAvatar()
+return

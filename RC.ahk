@@ -24,6 +24,8 @@ floof - Get an fox
 shibe - :heavy_check_mark:  Fixed by Maestr0 :heavy_check_mark: - Get an random shibe pic.
 shout - Makes your text be uppercased.
 chirp - Get an random bird pic.
+answer - Get an gif and an Yes/No answer.
+randavatar - Get an random avatar. 400x400 pictures.
 ---------------------------------------------
 )
 Send, ^v
@@ -309,3 +311,25 @@ send, ^v
 send {enter}
 return
 }	
+answer()
+{
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "https://yesno.wtf/api/", false)
+whr.Send()
+obj :=  Jxon_Load(whr.ResponseText)
+answer := % obj.answer
+123123 := % obj.image
+stringupper,helllo,answer,T
+WinActivate,ahk_exe Discord.exe
+clipboard = %helllo% %123123%
+send, ^v
+send {enter}
+}
+randAvatar()
+{
+Random,342423423423,1,999999999999
+WinActivate,ahk_exe Discord.exe
+clipboard = https://api.adorable.io/avatars/400/%342423423423%.png 
+send, ^v
+send {enter}
+}
