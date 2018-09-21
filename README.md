@@ -1,3 +1,4 @@
+### I am abandoing this project, nobody uses it and I dont have an use for it.
 # AHKDBot ![](https://img.shields.io/badge/status-Ready%20to%20use.-green.svg?longCache=true&style=for-the-badge) ![](https://img.shields.io/badge/AHK-1.1.30.00-blue.svg?longCache=true&style=for-the-badge) ![](https://img.shields.io/badge/-v3.0-red.svg?longCache=true&style=for-the-badge)
 
 AHKDBot is an discord bot based on ahk and hotstrings
