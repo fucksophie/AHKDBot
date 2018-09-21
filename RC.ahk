@@ -1,4 +1,3 @@
-﻿
 #include jxon.ahk
 help()
 {
@@ -26,6 +25,8 @@ shout - Makes your text be uppercased.
 chirp - Get an random bird pic.
 answer - Get an gif and an Yes/No answer.
 randavatar - Get an random avatar. 400x400 pictures.
+randline - :heavy_check_mark:  Fixed by Maestr0 :heavy_check_mark: - Get an random string.
+randpic - Get an random picture.
 ---------------------------------------------
 )
 Send, ^v
@@ -330,6 +331,32 @@ randAvatar()
 Random,342423423423,1,999999999999
 WinActivate,ahk_exe Discord.exe
 clipboard = https://api.adorable.io/avatars/400/%342423423423%.png 
+send, ^v
+send {enter}
+}
+randLine()
+{
+numA    := [1,2,3,4,5,6,7,8,9,0]
+letterA    := ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+list_random := ""
+loop, 6
+{
+    Random, num, 1, 10
+    Random, let, 1, 26
+    list_random .= numA[num] letterA[let] 
+}
+WinActivate,ahk_exe Discord.exe
+clipboard =  % list_random
+send, ^v
+send {enter}
+return
+}
+randpic()
+{
+Random,342423423423,9999999999999999999999,9999999999999999999999999999
+WinActivate,ahk_exe Discord.exe
+clipboard = https://picsum.photos/200/340/?random%342423423423%
 send, ^v
 send {enter}
 }
