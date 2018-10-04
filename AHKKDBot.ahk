@@ -80,6 +80,8 @@ return
 ::elonmusk::
 func("elonmusk").call()
 return
+::markdown::
+func("markdown").call()
 Exit:
 filedelete, maincode.ahk
 filedelete, jxon.ahk
