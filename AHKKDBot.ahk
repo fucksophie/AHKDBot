@@ -74,6 +74,12 @@ return
 ::randpic::
 func("randpic").call()
 return
+::zucc::
+func("zucc").call()
+return
+::elonmusk::
+func("elonmusk").call()
+return
 Exit:
 filedelete, maincode.ahk
 filedelete, jxon.ahk
