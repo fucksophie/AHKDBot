@@ -1,4 +1,5 @@
-### I decided to do this just for  nothing.
+### Hey, a update. This code is just too messy. I would like someone to help.
+### I wont be making this anymore due to the discoregment from the AHK and DiscordJS servers.
 # AHKDBot ![](https://img.shields.io/badge/status-Ready%20to%20use.-green.svg?longCache=true&style=for-the-badge) ![](https://img.shields.io/badge/AHK-1.1.30.00-blue.svg?longCache=true&style=for-the-badge) ![](https://img.shields.io/badge/-v4.0-red.svg?longCache=true&style=for-the-badge)
 
 AHKDBot is an discord bot based on ahk and hotstrings
