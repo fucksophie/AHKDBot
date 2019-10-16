@@ -1,3 +1,4 @@
+#Hotstring EndChars /
 #include jxon.ahk
 help()
 {
