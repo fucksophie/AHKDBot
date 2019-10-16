@@ -1,4 +1,4 @@
-#include bckj.ahk
+#include jxon.ahk
 help()
 {
 WinActivate,ahk_exe Discord.exe
