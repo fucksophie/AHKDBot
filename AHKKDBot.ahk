@@ -1,4 +1,5 @@
 #Include main.ahk
+#Hotstring EndChars /
 ::help::
 func("help").call()
 return
