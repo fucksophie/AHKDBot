@@ -52,7 +52,7 @@ reload
 ;
 shorten()
 {
-Inputbox, url,, Shorten an URL!
+ Inputbox, url,, Shorten an URL!
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "http://tinyurl.com/api-create.php?url=" url, true)
 whr.Send()
@@ -142,7 +142,6 @@ obj :=  Jxon_Load(whr.ResponseText)
 clipboard =  % obj.currentDateTime
 send, ^v
 send {enter}
-
 }
 ;
 ;
@@ -177,7 +176,6 @@ WinActivate,ahk_exe Discord.exe
 clipboard =  % obj.value	
 send, ^v
 send {enter}
-sendToDiscord("http://2.gp/KyyB")
 }
 ;
 ;
@@ -204,7 +202,6 @@ send {enter}
 ;
 floof()
 {
-	
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://randomfox.ca/floof/", true)
 whr.Send()
@@ -219,11 +216,6 @@ whr.WaitForResponse()
 Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
 WinActivate,ahk_exe discord.exe
 clipboard = %Output%
-send, ^v
-send {enter}
-return
-}
-;clipboard = % obj.image
 send, ^v
 send {enter}
 return
@@ -250,16 +242,20 @@ return
 ;
 chirp()
 {
-;
-;
-sendToDiscord(text)
-{
-	WinActivate,ahk_exe discord.exe
-clipboard = %text%
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "http://shibe.online/api/birds", true)
+whr.Send()
+; Using 'true' above and the call below allows the script to remain responsive.
+whr.WaitForResponse()
+Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
+WinActivate,ahk_exe discord.exe
+clipboard = %Output%
 send, ^v
 send {enter}
 return
 }
+;
+;
 shout()
 {
 inputbox,hello,,SHOUT TO ANYBODY YOU WANAT!
