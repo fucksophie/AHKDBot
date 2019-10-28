@@ -1,61 +1,51 @@
 #Hotstring EndChars /
 #include jxon.ahk
+; commit this as "Removed zucc,markdown,elonmusk,facepalm and despacito due to useless commands and markdown used a website that has died a long time ago. Also removed to maestr0 due to me making a credits commands for this probs.  Added spam command, but please don't use it on not-private channels. You'll get banned in the server and discord too. Use the spam feature to farm pokemon in a private channel on your own server."
 help()
 {
-WinActivate,ahk_exe Discord.exe
-clipboard =
+msgbox
 (
-:robot: AHKDBot commands :robot:
+    AHKDBot commands
 reload - Reload the AHKDBot
-facepalm - Facepalm somebody.
 shorten - Shorten an link
 about - Info about AHKDBot.
 shutdown  - Shutdown AHDBot
-license - AHDBot license.
+version - Get the version of AHKDBot.
 meow - Get an cute kitten!
 woof - Get an dooogoo!
 quack - Get an cool duck!
-date - Get the date
-version - Get AHKDBot version.
-welcome - Welcome  an newcommer!
+date - Get the current date..
 chuck - Chuck Norris joke.
 xkcd - Get the newest xkcd comic.
 floof - Get an fox
-shibe - :heavy_check_mark:  Fixed by Maestr0 :heavy_check_mark: - Get an random shibe pic.
+shibe - Get an random shibe pic.
 shout - Makes your text be uppercased.
 chirp - Get an random bird pic.
 answer - Get an gif and an Yes/No answer.
 randavatar - Get an random avatar. 400x400 pictures.
-randline - :heavy_check_mark:  Fixed by Maestr0 :heavy_check_mark: - Get an random string.
+randline - Get an random string.
 randpic - Get an random picture.
-zucc - Get an zucc
-ElonMusk - get an Elon
-markdown - Markdown guide
+credit - Crediting the awsome people who made this happen!
 )
-Send, ^v
-send {enter}
-
 }
+;
+;
+;
+credit()
+{
+msgbox,
+(
+maestr0 and the autohotkey community.
+most help was with regex, thanks for the help!
+)
+} 
 ;
 ;
 ;
 reload()
 {
-
-sendToDiscord("Reloading AHKDBot :white_check_mark:")
+msgbox Reloading AHKDBot
 reload
-}
-;
-;
-;
-facepalm()
-{
-inputbox,user,, Who got the facepalm?
-WinActivate,ahk_exe Discord.exe
-clipboard =  %user%  :GWfroggyFacepalm: 
-Send, ^v
-send {enter}
-
 }
 ;
 ;
@@ -66,7 +56,6 @@ Inputbox, url,, Shorten an URL!
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "http://tinyurl.com/api-create.php?url=" url, true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 short := whr.ResponseText
 WinActivate,ahk_exe Discord.exe
@@ -80,38 +69,15 @@ send {enter}
 ;
 about()
 {
-sendToDiscord(":ahkDiscordSelfbot has been created by OwlsOwlAtNight#4789. He made this in ahk. No discord.ahk. Just simple hotstrings")
+msgbox AHKDBot has been created by https://senpai.cf. They, made this in ahk. No discord.ahk.
 }
 ;
 ;
 ;
 shutdown()
 {
-sendToDiscord(":cry: Shutting down :cry:")
+msgbox Shutting down.
 ExitApp
-}
-;
-;
-;
-license()
-{
-	; Example: Download text to a variable:
-whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-whr.Open("GET", "http://www.wtfpl.net/txt/copying/", true)
-whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
-whr.WaitForResponse()
-WTFPL := whr.ResponseText
-WinActivate,ahk_exe Discord.exe
-clipboard =
-(
---- AHKDBot License ---
- %WTFPL%
- ----------------------------
-)
-Send, ^v
-send {enter}
-
 }
 ;
 ;
@@ -121,7 +87,6 @@ meow()
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://shibe.online/api/cats", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
 WinActivate,ahk_exe discord.exe
@@ -137,7 +102,7 @@ woof()
 {
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://dog.ceo/api/breeds/image/random", false)
-whr.Send()
+whr.Send()/
 obj :=  Jxon_Load(whr.ResponseText)
 setkeydelay,80
 WinActivate,ahk_exe Discord.exe
@@ -155,7 +120,6 @@ quack()
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://random-d.uk/api/v1/random?", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 obj :=  Jxon_Load(whr.ResponseText)
 setkeydelay,35
@@ -173,7 +137,6 @@ date()
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "http://worldclockapi.com/api/json/cet/now", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 obj :=  Jxon_Load(whr.ResponseText)
 clipboard =  % obj.currentDateTime
@@ -186,31 +149,18 @@ send {enter}
 ;
 version()
 {
-	WinActivate,ahk_exe Discord.exe
-
-clipboard =  
+msgbox,
 (
-Version 3.0 (Release 2)
+Version 4 (Release 3)
 ==================
-			Info about 3.0
+			Info about v4
 ==================
-3.0 has alot more commands. Also ahkDBot has a github rep now. https://github.com/RazorApple/AHKDBot#usage
-It has info about setting it up and stuff.
-I have plans on making more stuff like commands with parametrs and stuff. Dont get hyped bcs i still dont know 
-if i can make that come alive.
-Untill then we are going to stick to the clipboard and the function loader thing.
+v4 is pretty much a cleanup, and a fixing of a lot of problems. I've also gotten rid of my old website from the main loader that loads this file.
+Also removed a bunch of useless/garbage commands that just plain didn't work or where broken.
+Worked on this at the 10/27/2019 and 10/28/2019 outage. 5 pm and 10/11am the next day.
+Hope the internet comes back fast.
+https://senpai.cf
 )
-
-Send, ^v
-send {enter}
-
-}
-;
-;
-;
-welcome()
-{
-sendToDiscord("wEllCoEM to thE  AaAHK dIIsCOIirird")
 }
 ;
 ;
@@ -220,7 +170,6 @@ chuck()
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://api.chucknorris.io/jokes/random", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 obj :=  Jxon_Load(whr.ResponseText)
 setkeydelay,35
@@ -238,7 +187,6 @@ xkcd()
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://xkcd.com/info.0.json", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 obj :=  Jxon_Load(whr.ResponseText)
 setkeydelay,35
@@ -260,21 +208,35 @@ floof()
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "https://randomfox.ca/floof/", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
 whr.WaitForResponse()
 obj :=  Jxon_Load(whr.ResponseText)
 WinActivate,ahk_exe Discord.exe
-clipboard = % obj.image
+
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "http://shibe.online/api/birds", true)
+whr.Send()
+whr.WaitForResponse()
+Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
+WinActivate,ahk_exe discord.exe
+clipboard = %Output%
 send, ^v
 send {enter}
 return
 }
+;clipboard = % obj.image
+send, ^v
+send {enter}
+return
+}
+;
+;
+;
 shibe()
 {
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 whr.Open("GET", "http://shibe.online/api/shibes", true)
 whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
+
 whr.WaitForResponse()
 Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
 WinActivate,ahk_exe discord.exe
@@ -283,20 +245,13 @@ send, ^v
 send {enter}
 return
 }
+;
+;
+;
 chirp()
 {
-whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-whr.Open("GET", "http://shibe.online/api/birds", true)
-whr.Send()
-; Using 'true' above and the call below allows the script to remain responsive.
-whr.WaitForResponse()
-Output := SubStr(whr.ResponseText,3,StrLen(whr.ResponseText)-4)
-WinActivate,ahk_exe discord.exe
-clipboard = %Output%
-send, ^v
-send {enter}
-return
-}
+;
+;
 sendToDiscord(text)
 {
 	WinActivate,ahk_exe discord.exe
@@ -314,7 +269,10 @@ clipboard = %despacito%
 send, ^v
 send {enter}
 return
-}	
+}
+;
+;
+;
 answer()
 {
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
@@ -325,10 +283,13 @@ answer := % obj.answer
 123123 := % obj.image
 stringupper,helllo,answer,T
 WinActivate,ahk_exe Discord.exe
-clipboard = %helllo% %123123%
+clipboard = %helllo%! %123123%
 send, ^v
 send {enter}
 }
+;
+;
+;
 randAvatar()
 {
 Random,342423423423,1,999999999999
@@ -337,6 +298,9 @@ clipboard = https://api.adorable.io/avatars/400/%342423423423%.png
 send, ^v
 send {enter}
 }
+;
+;
+;
 randLine()
 {
 numA    := [1,2,3,4,5,6,7,8,9,0]
@@ -355,6 +319,30 @@ send, ^v
 send {enter}
 return
 }
+;
+;
+;
+spam()
+{
+numA    := [1,2,3,4,5,6,7,8,9,0]
+letterA    := ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","~","{","}",">","<",".",",",";","=","-","_",")","*","&","("]
+
+list_random := ""
+loop, 1000
+{
+    Random, num, 1, 10
+    Random, let, 1, 33
+    list_random .= numA[num] letterA[let] 
+}
+WinActivate,ahk_exe Discord.exe
+clipboard =  % list_random
+send, ^v
+send {enter}
+return
+}
+;
+;
+;
 randpic()
 {
 Random,342423423423,999999999999,999999999999999999
@@ -363,15 +351,5 @@ clipboard = https://picsum.photos/200/340/?random%342423423423%
 send, ^v
 send {enter}
 }
-zucc()
-{
-sendToDiscord("http://www.gstatic.com/tv/thumb/persons/589228/589228_v9_ba.jpg  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoKj7jy1y2oP66LjQHftgMugt-XqmvAYOm54oMco73Wy3lIhZA")
-}
-elonmusk()
-{
-sendToDiscord("https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/08/08/17/elon-musk.jpg    http://www.gstatic.com/tv/thumb/persons/487130/487130_v9_ba.jpg")
-}
-markdown()
-{
-sendToDiscord("https://lolisareinthe.club/sFoSNhFV.png")
-}
+; Project made by https://senpai.cf
+;                    GNU GENERAL PUBLIC LICENSE 2

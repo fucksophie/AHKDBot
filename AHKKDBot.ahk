@@ -1,82 +1,71 @@
 #Include main.ahk
 #Hotstring EndChars /
+
+::spam::
+    spam()
+return
 ::help::
-func("help").call()
+    help()
 return
 ::reload::
-func("reload").call()
-return
-::facepalm::
-func("facepalm").call()
+    reload()
 return
 ::version::
-func("version").call()
+    version()
 return
-::despacito:: http://2.gp/Kw68 `n
 ::shorten::
-func("shorten").call()
+    shorten()
 return
 ::about:: 
-func("about").call()
+    about()
+return
+::credit:: 
+    credit()
 return
 ::shutdown::
-func("shutdown").call()
-return
-::license::
-func("license").call()
+    shutdown()
 return
 ::meow::
-func("meow").call()
+    meow()
 return
 ::woof::
-func("woof").call()
+    woof()
 return
 ::quack::
-func("quack").call()
+    quack()
 return
 ::date::
-func("date").call()
-return
-::welcome::
-func("welcome").call()
+    date()
 return
 ::chuck::
-func("chuck").call()
+    chuck()
 return
 ::xkcd::
-func("xkcd").call()
+    xkcd()
 return
 ::floof::
-func("floof").call()
+    floof()
 return
 ::shibe::
-func("shibe").call()
+    shibe()
 return
 ::shout::
-func("shout").call()
+    shout()
 return
 ::chirp::
-func("chirp").call()
+    chirp()
 return
 ::answer::
-func("answer").call()
+    answer()
 return
 ::randAvatar::
-func("randAvatar").call()
+    randAvatar()
 return
 ::randLine::
-func("randLine").call()
+    randLine()
 return
 ::randpic::
-func("randpic").call()
+    randpic()
 return
-::zucc::
-func("zucc").call()
-return
-::elonmusk::
-func("elonmusk").call()
-return
-::markdown::
-func("markdown").call()
-return
-
+; Project made by https://senpai.cf
+;                   GNU GENERAL PUBLIC LICENSE 2
