@@ -1,4 +1,3 @@
-#Hotstring EndChars /
 Jxon_Load(ByRef src, args*)
 {
 	static q := Chr(34)
